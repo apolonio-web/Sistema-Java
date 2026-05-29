@@ -1,22 +1,21 @@
-public class main {
+public class Main {
     public static void main(String[] args) {
-        Treino treino1 = new Treino(
-            "Pliometria",
-            "melhorar a impulsão",
-            30,
-            true
-        );
+        Jogador jogador1 = new Jogador();
 
-        treino1.mostrarTreino();
+        jogador1.nome = "Apolo";
+        jogador1.posicao = "Atacante";
+        jogador1.impulso = 10;
+        jogador1.energia = 100;
 
-        if (treino1.treinoAtivo()){
-            System.out.println("O treino está ativo.");
-        }
+        jogador1.mostrarDados();
 
-        treino1.finalizarTreino();
+        Treino treino1 = new Treino();
+        
+        treino1.nomeTreino = "Treino de impulso";
+        treino1.ganhoImpulso = 20;
+        treino1.gastoEnergia = 20;
+        treino1.aplicarTreino(jogador1);
 
-        if(!treino1.treinoAtivo()){
-            System.out.println("O treino não está ativo.");
-        }
-        }
+        jogador1.mostrarDados();
     }
+}
